@@ -1,6 +1,7 @@
 const path = require('path');
 const glob = require('glob');
 const gulp = require('gulp');
+const cleanCss = require('gulp-clean-css');
 const concatCss = require('gulp-concat-css');
 const encapsulateCss = require('./encapsulateCss');
 const rename = require('gulp-rename');
@@ -13,6 +14,7 @@ gulp.task('build-sass', () =>
     .pipe(sass())
     .pipe(encapsulateCss())
     .pipe(concatCss('app.css'))
+    .pipe(cleanCss())
     .pipe(gulp.dest('dist/web'))
 );
 

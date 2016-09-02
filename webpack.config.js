@@ -1,6 +1,12 @@
+const webpack = require('webpack');
+
 module.exports = {
     module: {
         loaders: [
+            {
+                test: /\.js$/,
+                loader: 'envify'
+            },
             {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
@@ -17,5 +23,11 @@ module.exports = {
         publicPath: '/static/',
         library: 'App',
         libraryTarget: 'umd'
-    }
+    },
+    plugins: [
+        new webpack.optimize.OccurrenceOrderPlugin(true),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: true
+        })
+    ],
 };
