@@ -1,12 +1,14 @@
 const webpack = require('webpack');
 
 module.exports = {
+	watch: true,
     module: {
-        loaders: [
+        postLoaders: [
             {
-                test: /\.js$/,
-                loader: 'envify'
-            },
+                loader: 'transform?envify'
+            }
+        ],
+        loaders: [
             {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
@@ -26,8 +28,8 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(true),
-        new webpack.optimize.UglifyJsPlugin({
+        /*new webpack.optimize.UglifyJsPlugin({
             compress: true
-        })
+        })*/
     ],
 };

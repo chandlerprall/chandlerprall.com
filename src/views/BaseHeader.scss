@@ -1,0 +1,27 @@
+header {
+	display: flex;
+	align-items: flex-end;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-size: 31px;
+}
+
+sub {
+	font-size: 12px;
+}
+
+nav {
+	margin-left: 20px;
+	flex-grow: 1;
+	text-align: center;
+
+	.navlink {
+		margin: 0 12px;
+		font-size: 21px;
+		font-variant: small-caps;
+	}
+}
