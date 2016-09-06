@@ -8,13 +8,14 @@ app.router.route(
     'get',
     location.href,
     {
-        callback: ({template, error}) => {
+        callback: ({template, error, pageData}) => {
             ReactDOM.render(
                 React.createElement(
                     app.BasePage,
                     {
                         error,
-                        PageComponent: template
+                        PageComponent: template,
+                        pageData
                     }
                 ),
                 document

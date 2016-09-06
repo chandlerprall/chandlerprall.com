@@ -9,10 +9,10 @@ export default function BaseHeader() {
 				<sub>thoughts and experiments for the web</sub>
 			</div>
 			<nav>
-				<Link className="navlink" href="/">home</Link>
+				<Link className="navlink" routeName="homepage">home</Link>
 				<Link className="navlink" href="/">articles</Link>
 				<Link className="navlink" href="/">projects</Link>
-				<Link className="navlink" href="/about">about</Link>
+				<Link className="navlink" routeName="about">about</Link>
 			</nav>
 		</header>
 	);

@@ -12,13 +12,14 @@ server.use((req, res, next) => {
         req.method,
         req.url,
         {
-            callback: ({template, error}) => {
+            callback: ({template, error, pageData}) => {
                 res.send(ReactDOM.renderToString(
                     React.createElement(
                         app.BasePage,
                         {
                             error,
-                            PageComponent: template
+                            PageComponent: template,
+							pageData
                         }
                     )
                 ));

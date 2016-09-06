@@ -14,7 +14,8 @@ export default class BasePage extends Component {
 
 		this.state = {
 			PageComponent: props.PageComponent,
-			error: props.error
+			error: props.error,
+			pageData: props.pageData
 		};
 
 		if (typeof window !== 'undefined') {
@@ -52,20 +53,22 @@ export default class BasePage extends Component {
 			'get',
 			url,
 			{
-				callback: ({template, error}) => {
-					this.setState({PageComponent: template, error});
+				callback: ({template, error, pageData}) => {
+					this.setState({PageComponent: template, error, pageData});
+					window.scrollX = 0; // eslint-disable-line no-undef
 				}
 			}
 		);
 	}
 
 	render() {
-		const {PageComponent, error} = this.state;
+		const {PageComponent, error, pageData = {}} = this.state;
+		const {title} = pageData;
 
 		return (
 			<html>
 				<head>
-					<title>Thoughts and Experiments for the Web | Chandler Prall</title>
+					<title>{`${title}  | Chandler Prall`}</title>
 					<link rel="stylesheet" type="text/css" href="/static/app.css"/>
 				</head>
 				<body onClick={(e) => this.handleLinkClick(e)}>
@@ -81,5 +84,8 @@ export default class BasePage extends Component {
 
 BasePage.propTypes = {
 	PageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+	pageData: PropTypes.shape({
+		title: PropTypes.string
+	}),
 	error: PropTypes.node
 };
