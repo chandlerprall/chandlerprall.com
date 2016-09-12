@@ -2,27 +2,61 @@
 
 .centered {
 	@include center-align;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
-.row {
+.card {
 	@include row;
+	@include column(100%);
 	align-items: center;
-	position: relative;
 	margin-bottom: 40px;
-}
+	flex-wrap: wrap;
 
-.column-major {
-	@include column(55%);
-}
-
-.column-minor {
-	@include column(40%);
-
-	&:last-child {
-		text-align: center;
+	.cardTitle {
+		@include column(55%);
+		order: 0;
+		height: 0;
 	}
 
-	img {
-		box-shadow: 1px 4px 10px 0px #444;
+	.cardContent {
+		@include column(55%);
+		order: 1;
+		margin-top: 2.5rem;
+	}
+
+	.cardImage {
+		@include column(40%);
+		order: 2;
+
+		&:last-child {
+			text-align: center;
+		}
+
+		img {
+			box-shadow: 1px 4px 10px 0 #444;
+			max-width: 100%;
+		}
+	}
+
+	&:nth-child(n+3) {
+		@include column(30%);
+		flex-wrap: wrap;
+
+		.cardTitle {
+			height: auto;
+		}
+
+		.cardContent {
+			@include column(100%);
+			order: 2;
+			margin-top: 0;
+		}
+
+		.cardImage {
+			@include column(100%);
+			order: 1;
+		}
 	}
 }
