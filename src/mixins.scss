@@ -1,0 +1,15 @@
+@mixin center-align() {
+	margin: 0 auto;
+	width: 1000px;
+}
+
+@mixin row() {
+	display: flex;
+	justify-content: space-between;
+}
+
+@mixin column($basis: null, $grow: null, $shrink: null) {
+	flex-basis: $basis;
+	flex-grow: $grow;
+	flex-shrink: $shrink;
+}

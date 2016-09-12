@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {URLStructure} from 'napoleon';
 import router from '../routes/router';
+import {isInternalUrl} from '../utils/PathUtils';
 
 export default function Link({className, routeName, routeParams, href, target, children}) {
 	let theHref;

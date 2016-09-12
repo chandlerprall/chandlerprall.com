@@ -1,11 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import BaseHeader from './BaseHeader';
 import router from '../routes/router';
-
-const INTERNAL_URL_REGEXP = /^[a-z]+:\/\//;
-function isInternalUrl(url) {
-	return !url.match(INTERNAL_URL_REGEXP);
-}
+import {isInternalUrl} from '../utils/PathUtils';
 
 export default class BasePage extends Component {
 	constructor(...args) {

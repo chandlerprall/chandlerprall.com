@@ -1,20 +1,28 @@
-header {
+@import '../mixins';
+
+.centered {
+	@include center-align;
 	display: flex;
 	align-items: flex-end;
-	padding-bottom: 5px;
-	border-bottom: 3px solid #264656;
-	margin-bottom: 10px;
+}
+
+header {
+	padding: 20px 0 10px;
+	border-bottom: 3px solid #868686;
+	margin-bottom: 40px;
+	background-color: #d6ecd5;
+	color: #212121;
 }
 
 h1 {
 	margin: 0;
 	padding: 0;
 	font-weight: normal;
-	font-size: 31px;
+	font-size: 2.2rem;
 }
 
 sub {
-	font-size: 12px;
+	font-size: 0.86rem;
 }
 
 nav {
@@ -24,7 +32,7 @@ nav {
 
 	.navlink {
 		margin: 0 12px;
-		font-size: 21px;
+		font-size: 1.5rem;
 		font-variant: small-caps;
 	}
 }

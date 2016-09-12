@@ -1,0 +1,28 @@
+@import '../mixins';
+
+.centered {
+	@include center-align;
+}
+
+.row {
+	@include row;
+	align-items: center;
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.column-major {
+	@include column(55%);
+}
+
+.column-minor {
+	@include column(40%);
+
+	&:last-child {
+		text-align: center;
+	}
+
+	img {
+		box-shadow: 1px 4px 10px 0px #444;
+	}
+}
