@@ -10,7 +10,6 @@
 .card {
 	@include row;
 	@include column(100%);
-	align-items: center;
 	margin-bottom: 40px;
 	flex-wrap: wrap;
 
