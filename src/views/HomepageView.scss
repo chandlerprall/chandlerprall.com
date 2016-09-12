@@ -9,7 +9,7 @@
 
 .card {
 	@include row;
-	@include column(30%);
+	@include column(100%);
 	align-items: center;
 	margin-bottom: 40px;
 	flex-wrap: wrap;
@@ -35,23 +35,31 @@
 		}
 	}
 
-	&:nth-child(-n+2) {
-		@include column(100%);
+	@media (min-width: 768px) {
+		@include column(45%);
 
-		.cardTitle {
-			@include column(55%);
-			height: 0;
-		}
+		&:nth-child(-n+2) {
+			@include column(100%);
 
-		.cardContent {
-			@include column(55%);
-			order: 1;
-			margin-top: 2.5rem;
-		}
+			.cardTitle {
+				@include column(55%);
+				height: 0;
+			}
 
-		.cardImage {
-			@include column(40%);
-			order: 2;
+			.cardContent {
+				@include column(55%);
+				order: 1;
+				margin-top: 2.5rem;
+			}
+
+			.cardImage {
+				@include column(40%);
+				order: 2;
+			}
 		}
+	}
+
+	@media (min-width: 850px) {
+		@include column(30%);
 	}
 }

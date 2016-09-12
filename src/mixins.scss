@@ -1,6 +1,7 @@
 @mixin center-align() {
 	margin: 0 auto;
-	width: 1000px;
+	padding: 0 10px;
+	max-width: 1000px;
 }
 
 @mixin row() {
