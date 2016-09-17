@@ -1,11 +1,15 @@
 import React, {PropTypes} from 'react';
 
-export default function Headline({children}) {
+export default function Headline({children, sub}) {
 	return (
-		<h1>{children}</h1>
+		<div>
+			<h2>{sub}</h2>
+			<h1>{children}</h1>
+		</div>
 	);
 }
 
 Headline.propTypes = {
-	children: PropTypes.node.isRequired
+	children: PropTypes.node.isRequired,
+	sub: PropTypes.string
 };

@@ -1,9 +1,9 @@
 @import '../mixins';
 
 .centered {
-	@include center-align;
 	display: flex;
 	align-items: flex-end;
+	flex-wrap: wrap;
 }
 
 header {
@@ -25,7 +25,6 @@ h1 {
 
 nav {
 	margin-left: 20px;
-	flex-grow: 1;
 	text-align: right;
 
 	.navlink {
@@ -33,20 +32,33 @@ nav {
 		font-size: 1.5rem;
 		font-variant: small-caps;
 	}
-}
 
-@media (max-width: 619px) {
-	.centered {
-		flex-direction: column;
-		align-items: flex-start;
+	&.textLinks {
+		flex-grow: 1;
+		order: 2;
 	}
 
+	&.mediaLinks {
+		order: 3;
+	}
+}
+
+@media (max-width: 800px) {
 	nav {
 		margin-left: 0;
 		text-align: left;
 
 		.navlink:first-child {
 			margin-left: 0;
+		}
+
+		&.textLinks {
+			order: 3;
+		}
+
+		&.mediaLinks {
+			order: 2;
+			margin-left: 20px;
 		}
 	}
 

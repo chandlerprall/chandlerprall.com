@@ -1,5 +1,23 @@
+div {
+	display: flex;
+	flex-direction: column;
+}
+
 h1 {
 	margin: 0 0 20px;
 	font-size: 2rem;
 	font-weight: normal;
+	order: 1;
+}
+
+h2 {
+	margin: 0 0 20px;
+	color: #666;
+	font-weight: normal;
+	font-size: 0.9rem;
+	order: 2;
+
+	& + h1 {
+		margin-bottom: 0;
+	}
 }

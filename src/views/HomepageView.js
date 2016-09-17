@@ -1,11 +1,12 @@
 import React from 'react';
+import PageCentered from '../components/PageCentered';
 import Link from '../components/Link';
 import Headline from '../components/Headline';
 import Paragraph from '../components/Paragraph';
 
 export default function HomepageView() {
     return (
-        <div className="centered">
+		<PageCentered className="centered">
 			<div className="card">
 				<section className="cardTitle">
 					<Headline>Goblin Physics</Headline>
@@ -16,7 +17,7 @@ export default function HomepageView() {
 				</section>
 				<section className="cardImage">
 					<Link href="http://www.goblinphysics.com" className="sectionLink">
-						<img src="/static/images/goblinphysics.jpg" alt="Goblin Physics"/>
+						<img src="/static/images/cards/goblinphysics.jpg" alt="Goblin Physics"/>
 					</Link>
 				</section>
 			</div>
@@ -31,11 +32,11 @@ export default function HomepageView() {
 				</section>
 				<section className="cardImage">
 					<Link href="http://chandlerprall.github.io/Physijs/" className="sectionLink">
-						<img src="/static/images/physijs.jpg" alt="Physijs"/>
+						<img src="/static/images/cards/physijs.jpg" alt="Physijs"/>
 					</Link>
 				</section>
 			</div>
-	
+
 			<div className="card">
 				<section className="cardTitle">
 					<Headline>A</Headline>
@@ -46,11 +47,11 @@ export default function HomepageView() {
 				</section>
 				<section className="cardImage">
 					<Link href="http://www.goblinphysics.com" className="sectionLink">
-						<img src="/static/images/goblinphysics.jpg" alt="Goblin Physics"/>
+						<img src="/static/images/cards/goblinphysics.jpg" alt="Goblin Physics"/>
 					</Link>
 				</section>
 			</div>
-	
+
 			<div className="card">
 				<section className="cardTitle">
 					<Headline>B</Headline>
@@ -61,7 +62,7 @@ export default function HomepageView() {
 				</section>
 				<section className="cardImage">
 					<Link href="http://www.goblinphysics.com" className="sectionLink">
-						<img src="/static/images/goblinphysics.jpg" alt="Goblin Physics"/>
+						<img src="/static/images/cards/goblinphysics.jpg" alt="Goblin Physics"/>
 					</Link>
 				</section>
 			</div>
@@ -76,7 +77,7 @@ export default function HomepageView() {
 				</section>
 				<section className="cardImage">
 					<Link href="http://www.goblinphysics.com" className="sectionLink">
-						<img src="/static/images/goblinphysics.jpg" alt="Goblin Physics"/>
+						<img src="/static/images/cards/goblinphysics.jpg" alt="Goblin Physics"/>
 					</Link>
 				</section>
 			</div>
@@ -91,10 +92,10 @@ export default function HomepageView() {
 				</section>
 				<section className="cardImage">
 					<Link href="http://www.goblinphysics.com" className="sectionLink">
-						<img src="/static/images/goblinphysics.jpg" alt="Goblin Physics"/>
+						<img src="/static/images/cards/goblinphysics.jpg" alt="Goblin Physics"/>
 					</Link>
 				</section>
 			</div>
-		</div>
+		</PageCentered>
     );
 }

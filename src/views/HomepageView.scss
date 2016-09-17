@@ -1,7 +1,6 @@
 @import '../mixins';
 
 .centered {
-	@include center-align;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
