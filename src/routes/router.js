@@ -2,6 +2,7 @@ import {Router} from 'napoleon';
 import AboutRoute from './AboutRoute';
 import HomepageRoute from './HomepageRoute';
 import ProjectRoutes from './projects';
+import PostRoutes from './posts';
 
 const router = new Router();
 
@@ -16,9 +17,7 @@ function routeHandler(route) {
 	};
 }
 
-router.mount({...AboutRoute.route, handler: routeHandler(AboutRoute)});
-router.mount({...HomepageRoute.route, handler: routeHandler(HomepageRoute)});
-ProjectRoutes.forEach(projectRoute => {
+[AboutRoute, HomepageRoute].concat(PostRoutes, ProjectRoutes).forEach(projectRoute => {
 	router.mount({...projectRoute.route, handler: routeHandler(projectRoute)});
 });
 

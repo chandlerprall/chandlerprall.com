@@ -28,3 +28,5 @@ export default function MindlessView() {
 		</PageCentered>
 	);
 }
+
+MindlessView.displayName = 'MindlessView';

@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import BaseHeader from './BaseHeader';
 import router from '../routes/router';
-import {isInternalUrl} from '../utils/PathUtils';
+import {isInternalUrl, getParentAnchor} from '../utils/PathUtils';
 
 export default class BasePage extends Component {
 	constructor(...args) {
@@ -21,11 +21,12 @@ export default class BasePage extends Component {
 	}
 
 	handleLinkClick(e) {
-		if (e.target.nodeName === 'A') {
-			const target = e.target.getAttribute('target');
+		const node = getParentAnchor(e.target);
+		if (node != null) {
+			const target = node.getAttribute('target');
 			if (target != null) return;
 
-			const href = e.target.getAttribute('href');
+			const href = node.getAttribute('href');
 			if (isInternalUrl(href)) {
 				this.navigateToUrl(href);
 				e.preventDefault();
@@ -51,7 +52,7 @@ export default class BasePage extends Component {
 			{
 				callback: ({template, error, pageData}) => {
 					this.setState({PageComponent: template, error, pageData});
-					window.scrollX = 0; // eslint-disable-line no-undef
+					document.body.scrollTop = 0; // eslint-disable-line no-undef
 				}
 			}
 		);
@@ -78,6 +79,8 @@ export default class BasePage extends Component {
 		);
 	}
 }
+
+BasePage.displayName = 'BasePage';
 
 BasePage.propTypes = {
 	PageComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),

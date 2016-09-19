@@ -6,6 +6,8 @@ export default function Paragraph({children}) {
 	);
 }
 
+Paragraph.displayName = 'Paragraph';
+
 Paragraph.propTypes = {
 	children: PropTypes.node.isRequired
 };

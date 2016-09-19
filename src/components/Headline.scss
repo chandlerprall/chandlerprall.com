@@ -3,14 +3,21 @@ div {
 	flex-direction: column;
 }
 
-h1 {
+.heading {
 	margin: 0 0 20px;
-	font-size: 2rem;
-	font-weight: normal;
 	order: 1;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 2rem;
 }
 
 h2 {
+	font-size: 1.6rem;
+}
+
+sub {
 	margin: 0 0 20px;
 	color: #666;
 	font-weight: normal;

@@ -81,3 +81,5 @@ export default class BaseHeader extends PureComponent {
 		);
 	}
 };
+
+BaseHeader.displayName = 'BaseHeader';
