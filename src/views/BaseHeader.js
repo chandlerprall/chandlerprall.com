@@ -68,7 +68,7 @@ export default class BaseHeader extends PureComponent {
 					</div>
 					<nav className="textLinks">
 						<Link className="navlink" routeName="homepage">home</Link>
-						<Link className="navlink" href="/">articles</Link>
+						<Link className="navlink" href="/">posts</Link>
 						<Link className="navlink" href="/">projects</Link>
 						<Link className="navlink" routeName="about">about</Link>
 					</nav>

@@ -21,7 +21,7 @@ export default function Card({title, image, blurb, links}) {
 				<Paragraph>{blurb}</Paragraph>
 				<Paragraph>{leftLink}{rightLink}</Paragraph>
 			</section>
-			<section className="cardImage" display-if={image}>
+			<section className="cardImage">
 				<Link href={links.primary.href} routeName={links.primary.routeName} routeParams={links.primary.routeParams}>
 					<img src={image} alt={title}/>
 				</Link>
@@ -42,7 +42,7 @@ const linkStructure = PropTypes.shape({
 Card.propTypes = {
 	type: PropTypes.oneOf([CARD_PROJECT, CARD_POST]).isRequired,
 	title: PropTypes.string.isRequired,
-	image: PropTypes.string,
+	image: PropTypes.string.isRequired,
 	blurb: PropTypes.string.isRequired,
 	links: PropTypes.shape({
 		primary: linkStructure.isRequired,

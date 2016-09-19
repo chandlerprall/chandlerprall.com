@@ -4,6 +4,7 @@ import Link from '../../components/Link';
 import Headline from '../../components/Headline';
 import Paragraph from '../../components/Paragraph';
 import FloatImage from '../../components/FloatImage';
+import CodeHighlight from '../../components/CodeHighlight';
 
 export default function RAFView() {
 	return (
@@ -14,45 +15,38 @@ export default function RAFView() {
 
 			<Paragraph>I think requestAnimationFrame is a great addition to Javascript, but these two points need some emphasizing:</Paragraph>
 
-			<Paragraph>
-				<ul>
-					<li>Use requestAnimationFrame for animations / screen updates</li>
-					<li>Do not use it for anything else (especially game logic)</li>
-				</ul>
-			</Paragraph>
+			<ul>
+				<li>Use requestAnimationFrame for animations / screen updates</li>
+				<li>Do not use it for anything else (especially game logic)</li>
+			</ul>
 
 			<Headline type="h2">Quick example</Headline>
 
 			<Paragraph>What exactly does this mean? Here’s a short demonstration; the top code block relies on requestAnimationFrame to handle everything while the second block has the game logic separated out from the graphics.</Paragraph>
 
-			<code>
-				function render() {'{'}
-					[...] // Code to update the DOM, or Canvas,
-						  // or anything else graphics-related
+			<CodeHighlight
+code={`function render() {
+	[...] // Code to update the DOM, or Canvas,or anything else graphics-related
 
-					[...] // Update the player's location, health,
-						  // or anything else logic-related
+	[...] // Update the player's location, health, or anything else logic-related
 
-					requestAnimationFrame( render );
-				}
-			</code>
+	requestAnimationFrame(render);
+}`}
+			/>
 
-			<code>
-				function render() {'{'}
-					[...] // Code to update the DOM, or Canvas,
-						  // or anything else graphics-related
+			<CodeHighlight
+code={`function render() {
+	[...] // Code to update the DOM, or Canvas, or anything else graphics-related
 
-					requestAnimationFrame( render );
-				}
+	requestAnimationFrame(render);
+}
 
-				function gameStep() {'{'}
-					[...] // Update the player's location, health,
-						  // or anything else logic-related
+function gameStep() {
+	[...] // Update the player's location, health, or anything else logic-related
 
-					setTimeout( gameStep, 1000 / 60 ); // process the game logic
-													// at a target 60 FPS.
-				}
-			</code>
+	setTimeout(gameStep, 1000 / 60); // process the game logic at a target 60 FPS.
+}`}
+			/>
 
 			<Headline type="h2">The Growing Trend</Headline>
 
@@ -72,13 +66,11 @@ export default function RAFView() {
 
 			<Paragraph>The solution was to move his game logic out of the requestAnimationFrame loop and put it in a separate loop driven by setTimeout. There are in fact a few things which will cause a requestAnimationFrame-based loop to run at different speeds.</Paragraph>
 
-			<Paragraph>
-				<ul>
-					<li>requestAnimationFrame is designed to speed up and slow down to match the monitor’s refresh rate. If you rely on it to drive logic then your game will play at different speeds depending on how quickly the monitor updates.</li>
-					<li>When a brower tab other than your page is selected the browser will slow down calls to your requestAnimationFrame loop – typically dropping to once per second. When your page is not being displayed there is no point in rendering anything on it.</li>
-					<li>A browser may throttle calls to your render function if the computer is in battery conservation mode. One of the biggest drains on a laptop battery is graphics and reducing how often draws occur has a big impact on battery life. If your code depends on requestAnimationFrame then it could slow down dramatically when the battery level is low.</li>
-				</ul>
-			</Paragraph>
+			<ul>
+				<li>requestAnimationFrame is designed to speed up and slow down to match the monitor’s refresh rate. If you rely on it to drive logic then your game will play at different speeds depending on how quickly the monitor updates.</li>
+				<li>When a brower tab other than your page is selected the browser will slow down calls to your requestAnimationFrame loop – typically dropping to once per second. When your page is not being displayed there is no point in rendering anything on it.</li>
+				<li>A browser may throttle calls to your render function if the computer is in battery conservation mode. One of the biggest drains on a laptop battery is graphics and reducing how often draws occur has a big impact on battery life. If your code depends on requestAnimationFrame then it could slow down dramatically when the battery level is low.</li>
+			</ul>
 
 			<Headline type="h2">Take away</Headline>
 
