@@ -4,7 +4,7 @@ import Link from '../../components/Link';
 import Headline from '../../components/Headline';
 import Paragraph from '../../components/Paragraph';
 import FloatImage from '../../components/FloatImage';
-import CodeHighlight from '../../components/CodeHighlight';
+import JSHighlight from '../../components/JSHighlight';
 
 export default function RAFView() {
 	return (
@@ -24,7 +24,7 @@ export default function RAFView() {
 
 			<Paragraph>What exactly does this mean? Here’s a short demonstration; the top code block relies on requestAnimationFrame to handle everything while the second block has the game logic separated out from the graphics.</Paragraph>
 
-			<CodeHighlight
+			<JSHighlight
 code={`function render() {
 	[...] // Code to update the DOM, or Canvas,or anything else graphics-related
 
@@ -34,7 +34,7 @@ code={`function render() {
 }`}
 			/>
 
-			<CodeHighlight
+			<JSHighlight
 code={`function render() {
 	[...] // Code to update the DOM, or Canvas, or anything else graphics-related
 
