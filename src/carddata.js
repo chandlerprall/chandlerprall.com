@@ -38,6 +38,7 @@ export default {
 	},
 	requestAnimationFrameFriend: {
 		type: CARD_POST,
+		image: '/static/images/cards/raf.png',
 		title: 'Request Animation Frame is not your (logic\'s) friend',
 		blurb: 'Many tutorials and examples use requestAnimationFrame to update not just rendering & visuals but also to power logic. This creates non-determinism in app/game code, leading to undesired experiences for many users.',
 		links: {
