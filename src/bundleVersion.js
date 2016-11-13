@@ -1,0 +1,1 @@
+export const BUNDLE = process.env.BUNDLE; // eslint-disable-line no-undef

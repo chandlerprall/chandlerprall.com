@@ -5,8 +5,8 @@ const React = require('react');
 const ReactDOM = require('react-dom/server');
 const server = express();
 
-server.use('/static', express.static(`${__dirname}/../dist/web`));
-server.use('/static', express.static(`${__dirname}/static`));
+server.use(`/static/${app.BUNDLE}/`, express.static(`${__dirname}/../dist/web`));
+server.use(`/static/`, express.static(`${__dirname}/static`));
 
 server.use((req, res, next) => {
 	app.router.route(

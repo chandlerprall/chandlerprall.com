@@ -1,14 +1,11 @@
 {
-  "name": "2o",
+  "name": "chandlerprall.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "gulp build",
     "lint": "gulp lint"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Chandler Prall <chandler.prall@gmail.com>",
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",

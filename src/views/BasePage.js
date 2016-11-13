@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import BaseHeader from './BaseHeader';
 import router from '../routes/router';
+import {BUNDLE} from '../bundleVersion';
 import {isInternalUrl, getParentAnchor} from '../utils/PathUtils';
 
 export default class BasePage extends Component {
@@ -67,13 +68,13 @@ export default class BasePage extends Component {
 				<head>
 					<title>{`${title} | Chandler Prall`}</title>
 					<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-					<link rel="stylesheet" type="text/css" href="/static/app.css"/>
+					<link rel="stylesheet" type="text/css" href={`/static/${BUNDLE}/app.css`}/>
 				</head>
 				<body onClick={(e) => this.handleLinkClick(e)}>
 					<BaseHeader/>
 					<PageComponent display-if={PageComponent}/>
 					<div display-if={error}>{error}</div>
-					<script type="text/javascript" src="/static/app.js"/>
+					<script type="text/javascript" src={`/static/${BUNDLE}/app.js`}/>
 				</body>
 			</html>
 		);
