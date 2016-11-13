@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const childProcess = require('child_process');
-const gitRef = childProcess.execSync('git rev-parse --short HEAD').toString();
+const gitRef = childProcess.execSync('git rev-parse --short HEAD').toString().trim();
 
 module.exports = {
 	watch: true,
@@ -33,7 +33,7 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env.REACT_SYNTAX_HIGHLIGHTER_LIGHT_BUILD': true,
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-			'process.env.BUNDLE': gitRef
+			'process.env.BUNDLE': `"${gitRef}"`
 		}),
 		/*new webpack.optimize.UglifyJsPlugin({
 		 compress: true
