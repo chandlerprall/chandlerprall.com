@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
-    "lint": "gulp lint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "gulp lint"
   },
   "author": "",
   "license": "ISC",

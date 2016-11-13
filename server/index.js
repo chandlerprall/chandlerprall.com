@@ -9,27 +9,27 @@ server.use('/static', express.static(`${__dirname}/../dist/web`));
 server.use('/static', express.static(`${__dirname}/static`));
 
 server.use((req, res, next) => {
-    app.router.route(
-        req.method,
-        req.url,
-        {
-            callback: ({template, error, pageData}) => {
-                res.send(ReactDOM.renderToString(
-                    React.createElement(
-                        app.BasePage,
-                        {
-                            error,
-                            PageComponent: template,
+	app.router.route(
+		req.method,
+		req.url,
+		{
+			callback: ({template, error, pageData}) => {
+				res.send(ReactDOM.renderToString(
+					React.createElement(
+						app.BasePage,
+						{
+							error,
+							PageComponent: template,
 							pageData
-                        }
-                    )
-                ));
-            }
-        }
-    );
-    next();
+						}
+					)
+				));
+			}
+		}
+	);
+	next();
 });
 
 server.listen(2000, () => {
-    console.log('Server listening on port 2000'); // eslint-disable-line
+	console.log('Server listening on port 2000'); // eslint-disable-line
 });

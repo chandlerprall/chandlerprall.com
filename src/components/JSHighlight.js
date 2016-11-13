@@ -8,12 +8,6 @@ export default class CodeHighlight extends PureComponent {
 	}
 
 	componentDidMount() {
-		/*require.ensure(['react-syntax-highlighter', 'react-syntax-highlighter/dist/styles/github'], require => {
-			const ReactSyntaxHighlighter = require('react-syntax-highlighter').default;
-			const WrapperStyle = require('react-syntax-highlighter/dist/styles/github').default;
-			this.setState({WrapperTag: ReactSyntaxHighlighter, WrapperStyle});
-		});*/
-
 		require.ensure(['highlight.js/lib/languages/javascript', 'lowlight/lib/core', 'react-syntax-highlighter', 'react-syntax-highlighter/dist/styles/github'], require => {
 			const js = require('highlight.js/lib/languages/javascript');
 			const lowlight = require('lowlight/lib/core');
@@ -30,7 +24,7 @@ export default class CodeHighlight extends PureComponent {
 		const {code} = this.props;
 
 		if (WrapperTag) {
-			return <WrapperTag language="javascript" style={WrapperStyle}>{code}</WrapperTag>
+			return <WrapperTag language="javascript" style={WrapperStyle}>{code}</WrapperTag>;
 		} else {
 			return <pre>{code}</pre>;
 		}

@@ -9,5 +9,6 @@ export default function FloatImage({floatDirection, className, ...imageProps}) {
 FloatImage.displayName = 'FloatImage';
 
 FloatImage.propTypes = {
+	className: PropTypes.string,
 	floatDirection: PropTypes.oneOf(['right', 'left'])
 };

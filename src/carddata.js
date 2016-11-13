@@ -45,4 +45,13 @@ export default {
 			primary: {routeName: 'requestAnimationFrameFriend', text: 'Read More'}
 		}
 	},
+	capacitor: {
+		type: CARD_PROJECT,
+		image: '/static/images/cards/capacitor.png',
+		title: 'Capacitor',
+		blurb: 'Library for managing application state, including subscribed data transformers and managed state mutations. Includes a companion project for connecting React applications.',
+		links: {
+			primary: {href: 'https://github.com/chandlerprall/capacitor', text: 'View on GitHub'}
+		}
+	}
 };
