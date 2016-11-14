@@ -34,9 +34,12 @@ module.exports = {
 			'process.env.REACT_SYNTAX_HIGHLIGHTER_LIGHT_BUILD': true,
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 			'process.env.BUNDLE': `"${gitRef}"`
-		}),
-		/*new webpack.optimize.UglifyJsPlugin({
-		 compress: true
-		 })*/
+		})
 	],
 };
+
+if (process.env.NODE_ENV === 'production') {
+	module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin({
+		compress: true
+	}));
+}
