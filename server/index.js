@@ -9,6 +9,7 @@ server.use(`/static/${app.BUNDLE}/`, express.static(`${__dirname}/../dist/web`))
 server.use('/static/', express.static(`${__dirname}/static`));
 
 server.use((req, res, next) => {
+	res.removeHeader('Cache-Control');
 	app.router.route(
 		req.method,
 		req.url,
